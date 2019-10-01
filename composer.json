@@ -29,7 +29,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Karu\\SimpleJsLocalization\\LocalizationProvider"
+                "Karu\\SimpleJsLocalization\\SimpleJsLocalizationProvider"
             ]
         }
     }
