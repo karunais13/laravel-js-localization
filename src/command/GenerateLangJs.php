@@ -11,7 +11,8 @@ class GenerateLangJs extends Command
      *
      * @var string
      */
-    protected $signature = 'localization:generate-js';
+    protected $signature = 'localization:generate-js 
+                            {--c|compress : Compress the JavaScript file.}';
 
     /**
      * The console command description.
@@ -24,6 +25,7 @@ class GenerateLangJs extends Command
      * Execute the console command.
      *
      * @return void
+     * @throws \Exception
      */
     public function handle()
     {
@@ -44,8 +46,16 @@ class GenerateLangJs extends Command
 
         $data = "const message=".json_encode($strings).";\n\n\n".$dfContent;
 
-        $wFile = fopen(public_path('js/simple-js-localise.js'), "w");
+        if( $this->option('compress') ) {
+            $data = \JShrink\Minifier::minify($data);
+        }
+
+        $path = 'js/simple-js-localise.js';
+
+        $wFile = fopen(public_path($path), "w");
         fwrite($wFile,$data);
         fclose($wFile);
+
+        $this->info("JS file has been generated at\033[1;33m [public/{$path}]\033[0m");
     }
 }
