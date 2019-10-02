@@ -44,11 +44,19 @@ class GenerateLangJs extends Command
         $dfContent = fread($dafaultFile, filesize($dfFile));
         fclose($dafaultFile);
 
+        $description = "/**
+* Simple JS Localization (https://karunais13.github.io/simple-js-localization/)
+*
+* @author Karunaiswaran (karunais1329@gmail.com)
+**/";
+
         $data = "const message=".json_encode($strings).";\n\n\n".$dfContent;
 
         if( $this->option('compress') ) {
             $data = \JShrink\Minifier::minify($data);
         }
+
+        $data = $description."\n\n".$data;
 
         $path = 'js/simple-js-localise.js';
 
