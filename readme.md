@@ -45,7 +45,7 @@ With the default configuration, this will create a public/js/simple-js-localise.
 ```html
 <script src="{{ asset('js/simple-js-localise.js') }}"></script>
 ```
-**Note: You'll have to localization:generate-js if you change your localization file.**
+**Note: You'll have to run localization:generate-js if you change your localization files.**
 
 
 ### Set Locale
@@ -57,7 +57,7 @@ window.lang.setLocale("{{ app()->getLocale() }}");
 window.lang.get("Hello");
 //> "Hello";
 // If locale set to `es`
-//> "Hola" (based on localizatin from lang folder in resources) 
+//> "Hola" (based on localization from lang folder in resources) 
 ```
 
 
