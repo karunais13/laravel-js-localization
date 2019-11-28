@@ -9,7 +9,7 @@ Install the usual [composer](https://getcomposer.org/) way.
 
 ###### Run this command at root directory of your project
 ```json
-"composer require karu/laravel-simple-js-localization"
+"composer require karu/simple-js-localization"
 ```
 
 #### For Laravel 5.5 and below add provider in config file like below : 
