@@ -1,6 +1,6 @@
 <?php
 
-namespace Karu\SimpleJsLocalization\Command;
+namespace Karu\SimpleJsLocalization\command;
 
 use Illuminate\Console\Command;
 
