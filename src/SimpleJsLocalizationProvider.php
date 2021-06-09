@@ -4,7 +4,7 @@ namespace Karu\SimpleJsLocalization;
 
 use Illuminate\Support\ServiceProvider;
 
-use Karu\SimpleJsLocalization\Command\GenerateLangJs;
+use Karu\SimpleJsLocalization\command\GenerateLangJs;
 
 class SimpleJsLocalizationProvider extends ServiceProvider
 {
